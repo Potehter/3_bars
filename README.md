@@ -12,108 +12,14 @@
 ```bash
 
 $ python bars.py bars.json 37.61 55.62 # possibly requires call of python3 executive instead of just python
+
 # пример ответа скрипта
-The biggest bar is:
-{
-    "geometry": {
-        "coordinates": [
-            37.638228501070095,
-            55.70111462948684
-        ],
-        "type": "Point"
-    },
-    "properties": {
-        "ReleaseNumber": 2,
-        "Attributes": {
-            "Address": "Автозаводская улица, дом 23, строение 1",
-            "OperatingCompany": null,
-            "SocialPrivileges": "нет",
-            "global_id": 169375059,
-            "PublicPhone": [
-                {
-                    "PublicPhone": "(905) 795-15-84"
-                }
-            ],
-            "District": "Даниловский район",
-            "AdmArea": "Южный административный округ",
-            "IsNetObject": "нет",
-            "Name": "Спорт бар «Красная машина»",
-            "SeatsCount": 450
-        },
-        "RowId": "fbe6c340-4707-4d74-b7ca-2b84a23bf3a8",
-        "DatasetId": 1796,
-        "VersionNumber": 2
-    },
-    "type": "Feature"
-}
-The smallest bar is:
-{
-    "geometry": {
-        "coordinates": [
-            37.35805920566864,
-            55.84614475898795
-        ],
-        "type": "Point"
-    },
-    "properties": {
-        "ReleaseNumber": 2,
-        "Attributes": {
-            "Address": "Дубравная улица, дом 34/29",
-            "OperatingCompany": null,
-            "SocialPrivileges": "нет",
-            "global_id": 20675518,
-            "PublicPhone": [
-                {
-                    "PublicPhone": "(495) 258-94-19"
-                }
-            ],
-            "District": "район Митино",
-            "AdmArea": "Северо-Западный административный округ",
-            "IsNetObject": "нет",
-            "Name": "БАР. СОКИ",
-            "SeatsCount": 0
-        },
-        "RowId": "17adc22c-5c41-4e4b-872f-815b521f2b53",
-        "DatasetId": 1796,
-        "VersionNumber": 2
-    },
-    "type": "Feature"
-}
-The closest bar is:
-{
-    "geometry": {
-        "coordinates": [
-            37.603133945101874,
-            55.62323523333079
-        ],
-        "type": "Point"
-    },
-    "properties": {
-        "ReleaseNumber": 2,
-        "Attributes": {
-            "Address": "Днепропетровская улица, дом 2",
-            "OperatingCompany": "Космик",
-            "SocialPrivileges": "нет",
-            "global_id": 20731603,
-            "PublicPhone": [
-                {
-                    "PublicPhone": "(495) 223-43-83"
-                }
-            ],
-            "District": "район Чертаново Северное",
-            "AdmArea": "Южный административный округ",
-            "IsNetObject": "да",
-            "Name": "Спорт-бар «КОСМИК»",
-            "SeatsCount": 150
-        },
-        "RowId": "e6104887-6c03-4427-b052-9a0d4facba8a",
-        "DatasetId": 1796,
-        "VersionNumber": 2
-    },
-    "type": "Feature"
-}
-
-
+Самый большой бар: Спорт бар «Красная машина», по адресу Автозаводская улица, дом 23, строение 1
+Телефон: (905) 795-15-84, мест: 450
+Самый маленький бар: БАР. СОКИ, по адресу Дубравная улица, дом 34/29
+Телефон: (495) 258-94-19, мест: 0
+Ближайший бар: Спорт-бар «КОСМИК», по адресу Днепропетровская улица, дом 2
+Телефон: (495) 223-43-83, мест: 150
 ```
 
 Запуск на Windows происходит аналогично.
