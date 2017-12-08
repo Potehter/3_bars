@@ -3,7 +3,7 @@ import sys
 
 
 def load_data(filepath):
-    with open(filepath, 'r') as source_file:
+    with open(filepath, 'r', encoding='utf-8') as source_file:
         source_content = json.loads(source_file.read())
     return source_content
 
@@ -11,30 +11,35 @@ def load_data(filepath):
 def get_biggest_bar(bars_array):
     biggest_bar = max(bars_array, key=lambda x:
                       x['properties']['Attributes']['SeatsCount'])
-    return biggest_bar['properties']['Attributes']
+    return biggest_bar
 
 
 def get_smallest_bar(bars_array):
     smallest_bar = min(bars_array, key=lambda x:
                        x['properties']['Attributes']['SeatsCount'])
-    return smallest_bar['properties']['Attributes']
+    return smallest_bar
 
 
-# блишайший бар ищем через диаметр: sqrt((x1 - x2)**2 + (y1 - y2)**2)
 def get_closest_bar(bars_array, longitude, latitude):
+    '''
+    блишайший бар ищем по формуле: sqrt((x1 - x2)**2 + (y1 - y2)**2)
+    https://algebra24.ru/rasstojanie-mezhdu-dvumja-tochkami
+    '''
     closest_bar = min(bars_array, key=lambda x:
                       (((x['geometry']['coordinates'][0] - longitude)**2) +
                       ((x['geometry']['coordinates'][1] - latitude)**2))**0.5)
-    return closest_bar['properties']['Attributes']
+    return closest_bar
 
 
-def print_bar_main_data(bar, champion_property):
-    bar_main_data = (champion_property,
-                     bar['Name'], bar['Address'],
-                     bar['PublicPhone'][0]['PublicPhone'],
-                     bar['SeatsCount'])
-    print('{0} бар: {1}, по адресу {2}'.format(*bar_main_data))
-    print('Телефон: {3}, мест: {4}'.format(*bar_main_data))
+def print_bar_main_data(bar, lead_property):
+    bar_attributes = bar['properties']['Attributes']
+    bar_main_data = (lead_property,
+                     bar_attributes['Name'],
+                     bar_attributes['Address'],
+                     bar_attributes['PublicPhone'][0]['PublicPhone'],
+                     bar_attributes['SeatsCount'])
+    string_to_print = '{0} бар: {1}, по адресу {2}; телефон: {3}, мест: {4}'
+    print(string_to_print.format(*bar_main_data))
 
 
 def main():
